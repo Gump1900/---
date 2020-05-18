@@ -2,7 +2,7 @@
 
 ## 目录：
 
-* Task01：赛题理解<br>
+* Task01：赛题理解并下载数据<br>
 * Task02：深度学习基础知识学习<br>
 * Task03：了解Pytorch框架，学会读取图像数据<br>
 * Task04：学习CNN基本原理，走通baseline<br>
