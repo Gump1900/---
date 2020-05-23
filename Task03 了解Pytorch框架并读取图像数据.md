@@ -12,6 +12,14 @@ import torchvision.transforms as transforms <br/>
 
 
 import torchvision.datasets as datasets <br/>
+torchvision.datasets中包含了以下数据集
+* MNIST
+* COCO（用于图像标注和目标检测）(Captioning and Detection)
+* LSUN Classification
+* ImageFolder
+* Imagenet-12
+* CIFAR10 and CIFAR100
+* STL10
 
 
 import torch.nn as nn <br/>
@@ -27,7 +35,8 @@ import torch.optim as optim <br/>
 from torch.autograd import Variable <br/>
 提供了类和函数用来对任意标量函数进行求导。<br/>要想使用自动求导，只需要对已有的代码进行微小的改变。只需要将所有的tensor包含进Variable对象中即可。
 
-from torch.utils.data.dataset  import Dataset<br/>
+from torch.utils.data.dataset import Dataset<br/>
+
 
 
 
