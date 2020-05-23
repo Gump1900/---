@@ -6,16 +6,18 @@
 cv2:<br/>
 OpenCV是一个跨平台的计算机视觉库，最早由Intel开源得来。OpenCV发展的非常早，拥有众多的计算机视觉、数字图像处理和机器视觉等功能。OpenCV在功能上比Pillow更加强大很多，学习成本也高很多。
 ### 1.3 torch
-import torchvision.models as models<br/>
-torchvision.models模块的子模块中包含以下模型结构。
+**import torchvision.models as models** <br/>
+torchvision.models    
+模块的子模块中包含以下模型结构。
 * AlexNet
 * VGG
 * ResNet
 * SqueezeNet
 * DenseNet You can construct a model with random weights by calling its constructor:
 
-import torchvision.transforms as transforms <br/>
-对PIL.Image进行变换
+**import torchvision.transforms as transforms** <br/>
+对PIL.Image进行变换。<br/>
+对Tensor进行变换。
 
 import torchvision.datasets as datasets <br/>
 torchvision.datasets中包含了以下数据集
