@@ -8,7 +8,8 @@ OpenCV是一个跨平台的计算机视觉库，最早由Intel开源得来。Ope
 PIL：<br/>
 
 ### 1.3 torch
-#### import torchvision.models as models
+<font size=5>import torchvision.models as models</font>
+
 torchvision.models模块的子模块中包含以下模型结构。
 * AlexNet
 * VGG
