@@ -4,7 +4,9 @@
 常见的文件导入，读取，数据处理，科学计算等
 ### 1.2 cv2,PIL
 cv2:<br/>
-OpenCV是一个跨平台的计算机视觉库，最早由Intel开源得来。OpenCV发展的非常早，拥有众多的计算机视觉、数字图像处理和机器视觉等功能。OpenCV在功能上比Pillow更加强大很多，学习成本也高很多。
+OpenCV是一个跨平台的计算机视觉库，最早由Intel开源得来。OpenCV发展的非常早，拥有众多的计算机视觉、数字图像处理和机器视觉等功能。OpenCV在功能上比Pillow更加强大很多，学习成本也高很多。<br/>
+PIL：<br/>
+
 ### 1.3 torch
 #### import torchvision.models as models
 torchvision.models模块的子模块中包含以下模型结构。
@@ -46,7 +48,26 @@ torchvision.datasets中包含了以下数据集
 
 
 
+## 2 数据扩增
+### 2.1 数据扩增目的
+数据扩增可以增加训练集的样本，同时也可以有效缓解模型过拟合的情况，也可以给模型带来的更强的泛化能力。
+### 2.2 数据扩增为什么有用
+深度学习模型，具有多个隐藏层的神经网络，需要学习的参数非常非常多，而现实条件下，获取原始数据的数量相对而言比较少，如果不做扩增，容易造成过拟合。<br/>
+其次，数据扩增可以增加样本空间。
+### 2.3 数据扩增方法
+在常见的数据扩增方法中，一般会从图像颜色、尺寸、形态、空间和像素等角度进行变换。当然不同的数据扩增方法可以自由进行组合，得到更加丰富的数据扩增方法。<br/>
+以torchvision为例，常见的数据扩增方法包括：<br/>
 
+* transforms.CenterCrop 对图片中心进行裁剪
+* transforms.ColorJitter 对图像颜色的对比度、饱和度和零度进行变换
+* transforms.FiveCrop 对图像四个角和中心进行裁剪得到五分图像
+* transforms.Grayscale 对图像进行灰度变换
+* transforms.Pad 使用固定值进行像素填充
+* transforms.RandomAffine 随机仿射变换
+* transforms.RandomCrop 随机区域裁剪
+* transforms.RandomHorizontalFlip 随机水平翻转
+* transforms.RandomRotation 随机旋转
+* transforms.RandomVerticalFlip 随机垂直翻转
 
 
 
