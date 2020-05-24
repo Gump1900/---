@@ -29,6 +29,7 @@ torchvision.datasets中包含了以下数据集
 * Imagenet-12
 * CIFAR10 and CIFAR100
 * STL10
+
 由于以上Datasets都是 torch.utils.data.Dataset的子类，所以，他们也可以通过torch.utils.data.DataLoader使用多线程（python的多进程）。
 
 #### import torch.nn as nn
@@ -56,6 +57,7 @@ torchvision.datasets中包含了以下数据集
 其次，数据扩增可以增加样本空间。
 ### 2.3 数据扩增方法
 在常见的数据扩增方法中，一般会从图像颜色、尺寸、形态、空间和像素等角度进行变换。当然不同的数据扩增方法可以自由进行组合，得到更加丰富的数据扩增方法。<br/>
+
 以torchvision为例，常见的数据扩增方法包括：<br/>
 
 * transforms.CenterCrop 对图片中心进行裁剪
@@ -68,6 +70,39 @@ torchvision.datasets中包含了以下数据集
 * transforms.RandomHorizontalFlip 随机水平翻转
 * transforms.RandomRotation 随机旋转
 * transforms.RandomVerticalFlip 随机垂直翻转
+
+### 2.4 常用数据扩增库
+* torchvision
+pytorch官方提供的数据扩增库，提供了基本的数据数据扩增方法，可以无缝与torch进行集成；但数据扩增方法种类较少，且速度中等；
+
+* imgaug
+imgaug是常用的第三方数据扩增库，提供了多样的数据扩增方法，且组合起来非常方便，速度较快；
+
+* albumentations
+是常用的第三方数据扩增库，提供了多样的数据扩增方法，对图像分类、语义分割、物体检测和关键点检测都支持，速度较快。
+
+## 3 Pytorch读取数据
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
