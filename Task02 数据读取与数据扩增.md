@@ -9,6 +9,7 @@ PIL：<br/>
 Pillow是Python图像处理函式库(PIL）的一个分支。Pillow提供了常见的图像读取和处理的操作。<br/>
 * 读取图片：im =Image.open(cat.jpg')
 * 应用模糊滤镜:im2 = im.filter(ImageFilter.BLUR)
+
 Pillow的官方文档：https://pillow.readthedocs.io/en/stable/
 
 ### 1.3 torch
@@ -109,7 +110,6 @@ import torch
 from torch.utils.data.dataset import Dataset
 import torchvision.transforms as transforms
 ```
-------
 
 定义类
 
@@ -145,9 +145,48 @@ train_path.sort()
 train_json = json.load(open('../input/train.json'))
 train_label = [train_json[x]['label'] for x in train_json]
 ```
+加载数据
+```
+data = SVHNDataset(
+          train_path, train_label,
+          transforms.Compose([
+              # 缩放到固定尺寸
+              transforms.Resize((64, 128)),
 
+              # 随机颜色变换
+              transforms.ColorJitter(0.2, 0.2, 0.2),
 
+              # 加入随机旋转
+              transforms.RandomRotation(5),
 
+              # 将图片转换为pytorch 的tesntor
+              transforms.ToTensor(),
+
+              # 对图像像素进行归一化
+              transforms.Normalize([0.485,0.456,0.406],[0.229,0.224,0.225])
+            ])
+            )
+```
+加入Dataloader后，代码改为
+```
+train_loader = torch.utils.data.DataLoader(
+        SVHNDataset(train_path, train_label,
+                   transforms.Compose([
+                       transforms.Resize((64, 128)),
+                       transforms.ColorJitter(0.3, 0.3, 0.2),
+                       transforms.RandomRotation(5),
+                       transforms.ToTensor(),
+                       transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+            ])), 
+    batch_size=10, # 每批样本个数
+    shuffle=False, # 是否打乱顺序
+    num_workers=0, # 读取的线程个数
+)
+```
+## 4 总结
+这部分内容主要参照Baseline完成，Pytorch框架的相关知识还不是特别熟悉，后续对照官方文档了解每部分参数有啥意义，该怎么定义。
+
+[Pytorch中文文档](https://pytorch-cn.readthedocs.io/zh/latest/)
 
 
 
