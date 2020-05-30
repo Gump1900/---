@@ -110,7 +110,7 @@ def validate(val_loader, model, criterion):
 针对上面的一些名词，例如epoch，batch_size等，参考了一篇知乎文章[训练神经网络中最基本的三个概念：Epoch, Batch, Iteration](https://zhuanlan.zhihu.com/p/29409502)，而loss选择了交叉熵损失函数，老师课上提到的其他损失函数，还没来得及尝试。
 
 # 4.模型保存
-在Pytorch中模型的保存和加载非常简单，比较常见的做法是保存和加载模型参数：
+在Pytorch中模型的保存和加载非常简单，比较常见的做法是保存和加载模型参数：<br/>
 `torch.save(model_object.state_dict(), 'model.pt')`<br/>
 `model.load_state_dict(torch.load(' model.pt'))`
 
